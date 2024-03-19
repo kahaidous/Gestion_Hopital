@@ -2,6 +2,7 @@ package ma.emsi.gestion_hopital.entities;
 
 import jakarta.persistence.*;
 import lombok.*;
+import ma.emsi.gestion_hopital.enums.GroupeSanguin;
 
 import java.util.Date;
 
@@ -16,7 +17,9 @@ public class Patient {
     private String nom;
     @Column(length = 8, updatable = false, unique = true, nullable = false)
     private String cin;
-    private String grpSanguin;
+    private GroupeSanguin grpSanguin;
     @Temporal(TemporalType.DATE)
     private Date dateNaissance;
+
+    private String phoneNumber;
 }
