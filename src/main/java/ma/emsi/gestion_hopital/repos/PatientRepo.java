@@ -9,4 +9,5 @@ import java.util.List;
 public interface PatientRepo extends JpaRepository<Patient,Integer> {
     List<Patient> findPatientByGrpSanguin(GroupeSanguin grp);
     Patient deleteByCin(String cin);
+    Patient findByCin(String cin);
 }

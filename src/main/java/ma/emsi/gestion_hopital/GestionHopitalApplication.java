@@ -1,6 +1,7 @@
 package ma.emsi.gestion_hopital;
 
 import ma.emsi.gestion_hopital.entities.Patient;
+import ma.emsi.gestion_hopital.enums.GroupeSanguin;
 import ma.emsi.gestion_hopital.repos.PatientRepo;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.CommandLineRunner;
@@ -24,12 +25,12 @@ public class GestionHopitalApplication implements CommandLineRunner {
 
         for (int i=1; i<=5;i++)
             patientRepo.save(new Patient(null,"Ahmed"
-                    ,"BL12345"+i,"A+",new Date()));
+                    ,"BL12345"+i, GroupeSanguin.B,new Date(),"060000"));
 
         //Modification du nom
         Patient p4 = patientRepo.findById(4).get();
         p4.setNom("Mohamed");
-        p4.setGrpSanguin("AB+");
+        p4.setGrpSanguin(GroupeSanguin.B);
         patientRepo.save(p4);
 
         //Vérification du changement
